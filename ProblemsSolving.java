@@ -38,3 +38,4 @@ public class ProblemsSolving implements Problems {
         return 0;
     }
 }
+//хоть бы получилось

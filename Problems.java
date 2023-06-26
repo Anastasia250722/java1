@@ -59,3 +59,4 @@ public interface Problems {
      */
     int findMostFrequentItem(List<Integer> list);
 }
+//1 попытка
