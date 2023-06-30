@@ -18,8 +18,16 @@ public class ProblemsSolving implements Problems {
         return max;
     }
 
-    public int getMaxNumber(List<Integer> list) {
-        return 0;
+    public int getMaxNumber(List<Integer> arrayList) {
+        int max = arrayList.get(0);
+
+        int i;
+        for (i = 0; i < arrayList.get(i); i++) {
+            if (arrayList.get(i) > max) {
+                max = arrayList.get(i);
+            }
+        }
+        return max;
     }
 
     public int getSum(int[] array) {
