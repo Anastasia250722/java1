@@ -1,5 +1,6 @@
 package org.example.class4.hw;
 
+import java.util.HashMap;
 import java.util.List;
 
 public interface Problems {
@@ -17,10 +18,10 @@ public interface Problems {
      * Функция для поиска максимального элемента в массиве чисел.
      * Подумать, как обрабатывать ситуации, если массив равен null или пустой
      *
-     * @param list
+     * @param arrayList
      * @return максимальное число в массиве
      */
-    int getMaxNumber(List<Integer> list);
+    int getMaxNumber(List<Integer> arrayList);
 
     /**
      * Функция для подсчета суммы элементов массива
@@ -33,18 +34,18 @@ public interface Problems {
     /**
      * Функция для подсчета суммы элементов массива
      * Подумать, как обрабатывать ситуации, если массив равен null или пустой
-     * @param list
+     * @param arrayList
      * @return сумму элементов массива
      */
-    int getSum(List<Integer> list);
+    int getSum(List<Integer> arrayList);
 
     /**
      * Убрать из массива повторяющиеся элементы.
      * Решение - преобразовать к Set, потом преобразовать обратно к List
-     * @param list
+     * @param arrayList
      * @return массив без повторяющихся элементов
      */
-    List<Integer> removeDuplicates(List<Integer> list);
+    List<Integer> removeDuplicates(List<Integer> arrayList);
 
     /**
      * Найти в массиве элемент, который встречается чаще остальных и вернуть его.
@@ -52,10 +53,11 @@ public interface Problems {
      * 1. Пройтись по массиву. И положить текущий элемент в качестве ключа в мапу.
      * Если в мапе такого элемента нет, то у этого ключа значение 1.
      * Если в мапе такой элемент уже есть, то взять значение по ключу и прибавить 1.
-     *
+     * <p>
      * 2. В получившейся мапе найти максимальное значение и получить ключ этого значения.
-     * @param list
+     *
+     * @param arrayList
      * @return
      */
-    int findMostFrequentItem(List<Integer> list);
+    HashMap<Integer, Integer> findMostFrequentItem(List<Integer> arrayList);
 }
