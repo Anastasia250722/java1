@@ -34,10 +34,11 @@ public interface Problems {
     /**
      * Функция для подсчета суммы элементов массива
      * Подумать, как обрабатывать ситуации, если массив равен null или пустой
-     * @param arrayList
+     *
+     * @param list
      * @return сумму элементов массива
      */
-    int getSum(List<Integer> arrayList);
+    int getSum(List<Integer> list);
 
     /**
      * Убрать из массива повторяющиеся элементы.
@@ -59,5 +60,5 @@ public interface Problems {
      * @param arrayList
      * @return
      */
-    HashMap<Integer, Integer> findMostFrequentItem(List<Integer> arrayList);
+    int findMostFrequentItem(List<Integer> arrayList);
 }

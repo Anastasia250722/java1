@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -34,48 +35,61 @@ public class TestProblemsSolving {
 
     @Test
     public void testShouldGetMaxNumberInArrayList() {
-        ArrayList<Integer> arrayList = new ArrayList<>();
+        List<Integer> arrayList = new ArrayList<>();
         arrayList.add(5);
         arrayList.add(3);
         arrayList.add(0);
 
         assertEquals(5, problems.getMaxNumber(arrayList));
 
-        ArrayList<Integer> arrayList1 = new ArrayList<>();
-        if (arrayList1.isEmpty()) {
-            System.out.println("array is empty");
-        }
-        //assertEquals(0, problems.getMaxNumber(arrayList1));
+        arrayList = null;
+        assertEquals(0, problems.getMaxNumber(arrayList));
+
+        List<Integer> listWithOneElement = new ArrayList<>();
+        listWithOneElement.add(5);
+        assertEquals(5, problems.getMaxNumber(listWithOneElement));
+
+        List<Integer> emptyList = new ArrayList<>();
+        assertEquals(0, problems.getMaxNumber(emptyList));
     }
 
 
     @Test
-    public int testShouldGetSumInArray() {
+    public void testShouldGetSumInArray() {
         int[] array = {0, 1, 2, 3};
-        int sumFromArray = problems.getSum(array);
-        System.out.println(sumFromArray);
-        return sumFromArray;
-    }
-    @Test
-    public int testShouldGetSumInArrayList() {
-        ArrayList<Integer> arrayList = new ArrayList<>();
-        arrayList.add(1);
-        arrayList.add(2);
-        arrayList.add(3);
+        assertEquals(6, problems.getSum(array));
 
-        int sumFromArrayList = problems.getSum(arrayList);
-        System.out.println(sumFromArrayList);
-        return sumFromArrayList;
+        array = null;
+        assertEquals(0, problems.getSum(array));
+
+        int[] arrayWithOneElement = {1};
+        assertEquals(1, problems.getSum(arrayWithOneElement));
+
+        int[] emptyArray = new int[0];
+        assertEquals(0, problems.getSum(emptyArray));
     }
 
     @Test
-    public int testFindMostFrequentItem() {
-        HashMap<Integer, Integer> map= new HashMap<>();
-        map.put(1, 10);
-        map.put(2, 11);
-        map.put(3, 11);
+    public void testShouldGetSumInArrayList() {
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
 
-
+        assertEquals(6, problems.getSum(list));
     }
+
+    @Test
+    public void testShouldRemoveDuplicate() {
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(1);
+        list.add(2);
+        list.add(3);
+
+        System.out.println(problems.removeDuplicates(list));
+    }
+
 }
-

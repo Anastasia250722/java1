@@ -18,63 +18,47 @@ public class ProblemsSolving implements Problems {
         return max;
     }
 
-    public int getMaxNumber(List<Integer> arrayList) {
-        int max = arrayList.get(0);
+    public int getMaxNumber(List<Integer> list) {
+        if (list == null || list.isEmpty()) return 0;
+        if (list.size() == 1) return list.get(0);
 
-        int i;
-        for (i = 0; i < arrayList.size(); i++) {
-            if (arrayList.get(i) > max) {
-                max = arrayList.get(i);
+        int max = list.get(0);
+        for (int i = 1; i < list.size(); i++) {
+            if (list.get(i) > max) {
+                max = list.get(i);
             }
         }
         return max;
     }
 
     public int getSum(int[] array) {
+        if (array == null) return 0;
+
         int sum = 0;
-        for (int i : array) {
-            sum = sum + array[i];
+        for (int item : array) {
+            sum += item;            // sum = sum + item
         }
         return sum;
     }
 
-    public int getSum(List<Integer> arrayList) {
+    public int getSum(List<Integer> list) {
+        if (list == null) return 0;
+
         int sum = 0;
-        int i;
-        for (i = 0; i < arrayList.size(); i++) {
-            sum = sum + arrayList.get(i);
+        for (int i = 0; i < list.size(); i++) {
+            sum += list.get(i);
         }
         return sum;
     }
 
-    public List<Integer> removeDuplicates(List<Integer> arrayList) {
-        return null;
-        //int uniqArray = ArrayList.from(new Set(arrayList));
-        // }
+    public List<Integer> removeDuplicates(List<Integer> list) {
+
+        Set<Integer> set= new HashSet<>(list);
+        List<Integer> newArrayList = new ArrayList<>(set);
+        return newArrayList;
     }
 
-    ;
-
-
-    public HashMap<Integer, Integer> findMostFrequentItem(List<Integer> arraylist) {
-        int max = arraylist.get(0);
-
-        for (Integer i : arraylist) {
-            Integer value = arraylist.get(i);
-            if (value == null) {
-                arraylist.put(i, 1);
-            } else {
-                arraylist.put(i, ++value);
-            }
-
-        }
-
-        for (int i : arraylist) {
-            if (arraylist.get(i) > max) {
-                max = arraylist.get(i);
-                return i;
-            }
-
-        }
-        return max;
+    public int findMostFrequentItem(List<Integer> arraylist) {
+        return 0;
     }
+}
